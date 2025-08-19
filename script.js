@@ -62,6 +62,13 @@ document.documentElement.style.setProperty('--color-primary', 'orangered');
 
 const logo = document.querySelector('.nav__logo');
 console.log(logo.alt);
-console.log(logo.alt);
-console.log(logo.alt);
-console.log(logo.alt);
+console.log(logo.src);
+console.log(logo.className);
+
+//Non-standard
+
+console.log(logo.designer);
+console.log(logo.getAttribute('designer'));
+logo.alt = "This is some beautiful pic, won't you agree?";
+logo.setAttribute('institution', 'Lautech');
+console.log(logo.getAttribute('institution'));
