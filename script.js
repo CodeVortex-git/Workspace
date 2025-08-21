@@ -30,6 +30,7 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+/*
 //////////////////////////////////
 const header = document.querySelector('.header');
 const allSections = document.querySelectorAll('.section');
@@ -72,3 +73,44 @@ console.log(logo.getAttribute('designer'));
 logo.alt = "This is some beautiful pic, won't you agree?";
 logo.setAttribute('institution', 'Lautech');
 console.log(logo.getAttribute('institution'));
+*/
+
+const btnScrollTo = document.querySelector('.btn--scroll-to');
+const section1 = document.querySelector('#section--1');
+const section2 = document.querySelector('#section--2');
+
+btnScrollTo.addEventListener('click', e => {
+  const s1coods = section1.getBoundingClientRect();
+  // const s2coods = section2.getBoundingClientRect();
+  console.log(s1coods);
+  console.log(e.target.getBoundingClientRect());
+
+  //Scrolling
+  // Alt 1
+  // window.scrollTo(
+  //   s1coods.left + window.pageXOffset,
+  //   s1coods.top + window.pageYOffset
+  // );
+  //Alt 2
+  // window.scrollTo({
+  //   left: s1coods.left + window.pageXOffset,
+  //   top: s1coods.top + window.pageYOffset,
+  //   behavior: 'smooth',
+  // });
+
+  //Modern way to
+  section1.scrollIntoView({ behavior: 'smooth' });
+});
+
+const h1 = document.querySelector('h1');
+h1.addEventListener('mouseenter', e => {
+  alert('You just hovered over the header element :D');
+});
+
+// rgb(255, 255, 255)
+
+const randomInt = (min, max) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+const randomcolor = () => `rgb(${randomInt(0, 255)})`;
+
+console.log(randomcolor);
