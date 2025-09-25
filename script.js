@@ -102,15 +102,22 @@ btnScrollTo.addEventListener('click', e => {
   section1.scrollIntoView({ behavior: 'smooth' });
 });
 
-const h1 = document.querySelector('h1');
-h1.addEventListener('mouseenter', e => {
-  alert('You just hovered over the header element :D');
-});
+//Hover Alert
+// const h1 = document.querySelector('h1');
+// h1.addEventListener('mouseenter', e => {
+//   alert('You just hovered over the header element :D');
+// });
 
 // rgb(255, 255, 255)
-
 const randomInt = (min, max) =>
   Math.floor(Math.random() * (max - min + 1) + min);
-const randomcolor = () => `rgb(${randomInt(0, 255)})`;
+const randomColor = `rgb(${randomInt(0, 255)}, ${randomInt(
+  0,
+  255
+)}, ${randomInt(0, 255)})`;
 
-console.log(randomcolor);
+document.querySelectorAll('.nav__link').forEach(el => {
+  el.addEventListener('click', e => {
+    console.log('LINK');
+  });
+});
