@@ -118,6 +118,6 @@ const randomColor = `rgb(${randomInt(0, 255)}, ${randomInt(
 
 document.querySelectorAll('.nav__link').forEach(el => {
   el.addEventListener('click', e => {
-    console.log('LINK');
+    // console.log('LINK');
   });
 });
