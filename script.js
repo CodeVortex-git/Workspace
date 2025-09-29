@@ -124,7 +124,16 @@ document.querySelector('.nav__links').addEventListener('click', e => {
   e.target.style.backgroundColor = randomColor();
 });
 
-document.querySelectorAll('.nav').addEventListener('click', e => {
+document.querySelector('.nav').addEventListener('click', e => {
   e.preventDefault();
   e.target.style.backgroundColor = randomColor();
+});
+
+document.querySelectorAll('.nav__link').forEach(function (el) {
+  el.addEventListener('click', function (e) {
+    e.preventDefault();
+    const id = this.getAttribute('href');
+    console.log(id);
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  });
 });
