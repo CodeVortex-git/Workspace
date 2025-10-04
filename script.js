@@ -109,31 +109,52 @@ btnScrollTo.addEventListener('click', e => {
 // });
 
 // rgb(255, 255, 255)
-const randomInt = (min, max) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
-const randomColor = () =>
-  `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+// const randomInt = (min, max) =>
+//   Math.floor(Math.random() * (max - min + 1) + min);
+// const randomColor = () =>
+//   `rgb(${randomInt(0, 255)}, ${randomInt(0, 255)}, ${randomInt(0, 255)})`;
 
-document.querySelector('.nav__link').addEventListener('click', e => {
-  e.preventDefault();
-  e.target.style.backgroundColor = randomColor();
-});
+// document.querySelector('.nav__link').addEventListener('click', e => {
+//   e.preventDefault();
+//   e.target.style.backgroundColor = randomColor();
+// });
 
-document.querySelector('.nav__links').addEventListener('click', e => {
-  e.preventDefault();
-  e.target.style.backgroundColor = randomColor();
-});
+// document.querySelector('.nav__links').addEventListener('click', e => {
+//   e.preventDefault();
+//   e.target.style.backgroundColor = randomColor();
+// });
 
-document.querySelector('.nav').addEventListener('click', e => {
-  e.preventDefault();
-  e.target.style.backgroundColor = randomColor();
-});
+// document.querySelector('.nav').addEventListener('click', e => {
+//   e.preventDefault();
+//   e.target.style.backgroundColor = randomColor();
+// });
 
-document.querySelectorAll('.nav__link').forEach(function (el) {
-  el.addEventListener('click', function (e) {
-    e.preventDefault();
-    const id = this.getAttribute('href');
-    console.log(id);
-    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-  });
-});
+// document.querySelectorAll('.nav__link').forEach(function (el) {
+//   el.addEventListener('click', function (e) {
+//     e.preventDefault();
+//     const id = this.getAttribute('href');
+//     console.log(id);
+//     document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   });
+// });
+
+// document.querySelector('.nav__links').addEventListener('click', function (e) {
+//   e.preventDefault();
+//   const id = e.target.getAttribute('href');
+//   console.log(id);
+//   document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+//   if (e.target.classList.contains('nav__link')) console.log('LINK');
+// });
+
+const h1 = document.querySelector('h1');
+
+//Going Downwards in the DOM: Transversing the DOM
+console.log(h1.querySelectorAll('.highlight'));
+console.log(h1.childNodes);
+console.log(h1.children);
+
+h1.firstElementChild.style.color = 'white';
+h1.lastElementChild.style.color = 'white';
+
+console.log(h1.parentNode);
+h1.closest('.header').style.background = 'var(--gradient-secondary)';
