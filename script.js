@@ -157,7 +157,7 @@ h1.firstElementChild.style.color = 'white';
 h1.lastElementChild.style.color = 'white';
 
 console.log(h1.parentNode);
-h1.closest('.header').style.background = 'var(--gradient-secondary)';
+h1.closest('.header').style.background = 'white';
 
 const tabs = document.querySelectorAll('.operations__tab');
 const tabsContainer = document.querySelector('.operations__tab-container');
@@ -179,4 +179,30 @@ tabsContainer.addEventListener('click', function (e) {
   document
     .querySelector(`.operations__content--${click.dataset.tab}`)
     .classList.add('operations__content--active');
+});
+
+//Menufade Animation
+const handleHover = function (e, opacity) {
+  if (e.target.classList.contains('nav__link')) {
+    const link = e.target;
+    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+    const logo = link.closest('.nav').querySelector('img');
+
+    siblings.forEach(el => {
+      if (el !== link) {
+        el.style.opacity = opacity;
+      }
+    });
+    logo.style.opacity = opacity;
+  }
+};
+
+const nav = document.querySelector('.nav');
+
+nav.addEventListener('mouseover', function (e) {
+  handleHover(e, 0.5);
+});
+
+nav.addEventListener('mouseout', function (e) {
+  handleHover(e, 1);
 });
