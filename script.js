@@ -146,77 +146,79 @@ btnScrollTo.addEventListener('click', e => {
 //   if (e.target.classList.contains('nav__link')) console.log('LINK');
 // });
 
-const h1 = document.querySelector('h1');
+// const h1 = document.querySelector('h1');
 
-//Going Downwards in the DOM: Transversing the DOM
-console.log(h1.querySelectorAll('.highlight'));
-console.log(h1.childNodes);
-console.log(h1.children);
+// //Going Downwards in the DOM: Transversing the DOM
+// console.log(h1.querySelectorAll('.highlight'));
+// console.log(h1.childNodes);
+// console.log(h1.children);
 
-h1.firstElementChild.style.color = 'white';
-h1.lastElementChild.style.color = 'white';
+// h1.firstElementChild.style.color = 'white';
+// h1.lastElementChild.style.color = 'white';
 
-console.log(h1.parentNode);
-h1.closest('.header').style.background = 'white';
+// console.log(h1.parentNode);
+// h1.closest('.header').style.background = 'white';
 
-const tabs = document.querySelectorAll('.operations__tab');
-const tabsContainer = document.querySelector('.operations__tab-container');
-const tabsContent = document.querySelectorAll('.operations__content');
+// const tabs = document.querySelectorAll('.operations__tab');
+// const tabsContainer = document.querySelector('.operations__tab-container');
+// const tabsContent = document.querySelectorAll('.operations__content');
 
-tabsContainer.addEventListener('click', function (e) {
-  const clicked = e.target.closest('.operations__tab');
-  console.log(clicked);
+// tabsContainer.addEventListener('click', function (e) {
+//   const clicked = e.target.closest('.operations__tab');
+//   console.log(clicked);
 
-  //Handling null clicks
-  if (!clicked) return;
+//   //Handling null clicks
+//   if (!clicked) return;
 
-  //Active tab
-  tabs.forEach(t => t.classList.remove('operations__tab--active'));
-  tabsContent.forEach(c => c.classList.remove('operations__tab--active'));
-  clicked.classList.add('operations__tab--active');
+//   //Active tab
+//   tabs.forEach(t => t.classList.remove('operations__tab--active'));
+//   tabsContent.forEach(c => c.classList.remove('operations__tab--active'));
+//   clicked.classList.add('operations__tab--active');
 
-  //Activate Content Area
-  document
-    .querySelector(`.operations__content--${click.dataset.tab}`)
-    .classList.add('operations__content--active');
-});
+//   //Activate Content Area
+//   document
+//     .querySelector(`.operations__content--${click.dataset.tab}`)
+//     .classList.add('operations__content--active');
+// });
 
-//Menufade Animation
-const handleHover = function (e, opacity) {
-  if (e.target.classList.contains('nav__link')) {
-    const link = e.target;
-    const siblings = link.closest('.nav').querySelectorAll('.nav__link');
-    const logo = link.closest('.nav').querySelector('img');
+// //Menufade Animation
+// const handleHover = function (e, opacity) {
+//   if (e.target.classList.contains('nav__link')) {
+//     const link = e.target;
+//     const siblings = link.closest('.nav').querySelectorAll('.nav__link');
+//     const logo = link.closest('.nav').querySelector('img');
 
-    siblings.forEach(el => {
-      if (el !== link) {
-        el.style.opacity = opacity;
-      }
-    });
-    logo.style.opacity = opacity;
-  }
-};
+//     siblings.forEach(el => {
+//       if (el !== link) {
+//         el.style.opacity = opacity;
+//       }
+//     });
+//     logo.style.opacity = opacity;
+//   }
+// };
 
-const nav = document.querySelector('.nav');
+// const nav = document.querySelector('.nav');
 
-nav.addEventListener('mouseover', function (e) {
-  handleHover(e, 0.5);
-});
+// nav.addEventListener('mouseover', function (e) {
+//   handleHover(e, 0.5);
+// });
 
-nav.addEventListener('mouseout', function (e) {
-  handleHover(e, 1);
-});
+// nav.addEventListener('mouseout', function (e) {
+//   handleHover(e, 1);
+// });
 
-//Adding Sticky Navigation
-const initialCoords = section1.getBoundingClientRect();
-console.log(initialCoords);
+// //Adding Sticky Navigation
+// const initialCoords = section1.getBoundingClientRect();
+// console.log(initialCoords);
 
-window.addEventListener('scroll', function (e) {
-  console.log(this.window.scrollY);
+// window.addEventListener('scroll', function (e) {
+//   console.log(this.window.scrollY);
 
-  if (this.window.scrollY > initialCoords.top) {
-    nav.classList.add('sticky');
-  } else {
-    nav.classList.remove('sticky');
-  }
-});
+//   if (this.window.scrollY > initialCoords.top) {
+//     nav.classList.add('sticky');
+// //   } else {
+// //     nav.classList.remove('sticky');
+//   }
+// });
+
+//Sticky Navigation: Intersection Observer API
